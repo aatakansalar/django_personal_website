@@ -1,0 +1,35 @@
+<div class="sidebar">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item sidebar-item">
+            <a href="{% url 'index'  %}" class="h3 text-dark">Ahmet Atakan Salar</a>
+            <p class="mt-2 text-secondary">// Aspiring Developer</p>
+        </li>
+        <li class="list-group-item sidebar-item">
+            <a href="/about" class="h6 text-dark">Hakkımda</a>
+        </li>
+        <li class="list-group-item sidebar-item">
+            <a href="/posts" class="h6 text-dark">Yazılarım</a>
+        </li>
+        <li class="list-group-item sidebar-item">
+            <a href="/portfolio"class="h6 text-dark">Portfolyo</a>
+        </li>
+        {% if request.user.is_authenticated %}
+            <li class="list-group-item sidebar-item">
+                <a href="/posts/dashboard/"class="h6 text-dark">Dashboard</a>
+            </li>
+            <li class="list-group-item sidebar-item">
+                <a href="/posts/makepost/"class="h6 text-dark">Yazı Ekle</a>
+            </li>
+            <li class="list-group-item sidebar-item">
+                <a href="/user/logout/"class="h6 text-dark">Çıkış Yap</a>
+            </li>
+        {% endif %}
+        <li class="list-group-item sidebar-item">
+            <a href="https://github.com/aatakansalar" class="text-secondary ml-1 mr-3"><i class="fab fa-github fa-lg"></i></a>
+            <a href="https://twitter.com/AtakanSalar" class="text-secondary mr-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="https://www.linkedin.com/in/ahmet-atakan-salar-7136881b1/" class="text-secondary mr-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+        </li>
+    </ul>
+</div>
+
+

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="row content-wrapper w-100">
+        <div class="col-md-6 offset-md-3 align-self-center">
+            <h4>Yazılarım</h4>
+            {% for post in posts %}
+            <div class="card mb-5">
+                {% if post.post_image %}
+                <a href="{% url 'post:post' post.id %}" class="post-img"><img class="card-img-top" src="{{post.post_image.url}}" alt="Card image cap"></a>
+                {% endif %}
+                <div class="card-body">
+                    <a href="{% url 'post:post' post.id %}" class="text-dark"><h4>{{post.post_title}}</h4></a>
+                    <p class="card-text">{{post.post_content|truncatewords:50|safe}}</p>
+                    <a href="{% url 'post:post' post.id %}" class="w-100">
+                        <span class="badge badge-primary float-right">Daha fazla...</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body %}

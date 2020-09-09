@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+
+<div class="header-wrapper bg-light border-bottom text-center">
+    <div class="header-content">
+        <h1><a href="" class="text-decoration-none text-dark font-weight-bolder">Ahmet Atakan Salar</a></h1>
+        <h4 class="text-secondary pt-2">//  Aspiring Developer</h4>
+    </div>
+
+    <a href="https://github.com/aatakansalar" class="text-dark mr-3"><i class="fab fa-github fa-2x"></i></a>
+    <a href="https://twitter.com/AtakanSalar" class="text-dark mr-3"><i class="fab fa-twitter fa-2x"></i></a>
+    <a href="https://www.linkedin.com/in/ahmet-atakan-salar-7136881b1/" class="text-dark mr-3"><i class="fab fa-linkedin-in fa-2x"></i></a>
+
+</div>
+
+
+<div class="row w-100 content-wrapper mt-5">
+    <div class="col-md-4 offset-md-3 align-self-center mt-1">
+        <h2 class="font-weight-bold ">Hakkımda</h2>
+        <p class="">------------------------------------------------</p>
+        <h4>Eğitim</h4>
+        <ul>
+            <li>Şehit Mustafa Serin Fen Lisesi (2014 - 2018)</li>
+            <li>İstanbul Bilgi Üniversitesi Bilgisayar Mühendisliği (Tam Burslu)  (2018 - )</li>
+        </ul>
+
+        <h4>Çalışma Alanları</h4>
+        <ul>
+            <li>Django</li>
+            <li>vs</li>
+        </ul>
+
+        
+    </div>
+    <div class="col-md-3">
+    {% if posts %}
+        <div class="posts">
+            <h3 class="mt-2 ">Son Yazılarım...</h3><hr>
+            {% for post in posts %}
+                <a href="{% url 'post:post' post.id %}" class="text-dark h5">{{post.post_title}}</a>   <small>//{{post.post_date}}</small><br>
+            {% endfor %}
+            {% endif %}
+        </div>  
+
+        <div class= "mt-3">
+            <h4>İletişim</h4>
+            <hr>
+            <p>
+                <i class="fas fa-envelope fa-lg mr-2"></i>  a.atakansalar@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row w-100">
+  <div class="col-md-6 offset-md-3 align-self-center content-wrapper">
+    <h4 class="mt-5">Yazılarım</h4>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Yayınlanma Tarih</th>
+            <th scope="col">Seçenekler</th>
+            <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+            <tr>
+                <td>
+                    {{post.id}}
+                </td>
+                <td>
+                    <a href="{% url 'post:post' post.id %}" class="text-dark">{{post.post_title}}</a>
+                </td>
+                <td>
+                    {{post.post_date}}
+                </td>
+                
+                <td><a class="btn btn-danger btn-sm" href="{% url 'post:updatePost' post.id %}">Update</a></td>
+                <td><a class="btn btn-danger btn-sm" href="{% url 'post:deletePost' post.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock body %}

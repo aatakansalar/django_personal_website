@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% if post %}
+<div class="row w-100">
+    <div class="col-md-8 offset-md-2 align-self-center content-wrapper">
+        <div class="post-wrapper">
+            {% if post.post_image %}
+            <!-- Preview Image -->
+            <img class="img-fluid" style="border-radius:8px 8px 0 0;" src="{{post.post_image.url}}" alt="">
+            {% endif %}
+            <h2 class="mt-2">{{post.post_title}}</h2>
+            <hr>
+            <p>
+                {{post.post_content|safe}}
+            </p>
+            <h6 class="text-secondary text-right"><i>{{post.post_date}}</i></h6>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock body %}
