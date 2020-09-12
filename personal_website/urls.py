@@ -13,6 +13,7 @@ urlpatterns = [
     path('posts/', include('post.urls'), name="posts"),
     path('portfolio/', views.portfolio, name="portfolio"),
     path('user/', include('user.urls')),
+    # path('about/', views.about, name='about')
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
