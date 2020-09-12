@@ -19,8 +19,10 @@ def about(request):
 
 def posts(request):
     posts = Post.objects.all()
+    tags = Tag.objects.all()
     context = {
         "posts": posts,
+        "tags": tags,
     }
     return render(request, 'posts.html', context)
 
