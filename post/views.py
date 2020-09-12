@@ -14,8 +14,10 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+"""
 def about(request):
     return render(request, 'about.html')
+""" 
 
 def posts(request):
     posts = Post.objects.all()
@@ -38,9 +40,6 @@ def tag_posts(request, id):
 def post(request, id):
     post = get_object_or_404(Post, id=id)
     return render(request, 'post.html', {"post": post})
-
-def portfolio(request):
-    return render(request, 'portfolio.html')
 
 @login_required(login_url="user:login") 
 def dashboard(request):

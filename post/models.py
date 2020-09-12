@@ -15,7 +15,7 @@ class Post(models.Model):
     post_content = RichTextField()
     post_date = models.DateTimeField(auto_now_add=True)
     post_image = models.FileField(blank=True, null=True, verbose_name="Resim Ekle:")
-    post_tags = models.ManyToManyField(Tag, verbose_name="tags", blank=True, null=True)
+    post_tags = models.ManyToManyField(Tag, verbose_name="tags", blank=True)
 
     def __str__(self):
         return self.post_title
