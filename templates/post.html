@@ -4,7 +4,7 @@
 
 {% if post %}
 <div class="row w-100">
-    <div class="col-md-7 offset-md-1 content-wrapper">
+    <div class="col-md-8 offset-md-2 content-wrapper">
         <div class="post-wrapper">
             {% if post.post_image %}
             <!-- Preview Image -->
@@ -12,6 +12,7 @@
             {% endif %}
             <h2 class="mt-2">{{post.post_title}}</h2>
             <hr>
+
             <p>
                 {{post.post_content|safe}}
             </p>

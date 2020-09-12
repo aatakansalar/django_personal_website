@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PostForm
 from django.contrib import messages
-from .models import Post
+from .models import Post, Tag
 from django.contrib.auth.decorators import login_required
 from user import urls
 
@@ -21,6 +21,15 @@ def posts(request):
     posts = Post.objects.all()
     context = {
         "posts": posts,
+    }
+    return render(request, 'posts.html', context)
+
+def tag_posts(request, id):
+    posts = Post.objects.filter(post_tags__id=id)
+    tag = Tag.objects.filter(id=id)[0]
+    context = {
+        'posts': posts,
+        "tag": tag,
     }
     return render(request, 'posts.html', context)
 
@@ -45,6 +54,7 @@ def makepost(request):
     if form.is_valid():
         post = form.save(commit=False)
         post.post_author = request.user
+        post.post_tags = None
         post.save()
         messages.success(request, 'Yazı oluşturuldu.')
         return redirect('index')
@@ -58,7 +68,6 @@ def updatePost(request, id):
         post = form.save(commit=False)
         post.post_author = request.user
         post.save()
-
         return redirect("index")
     return render(request, 'update.html', {'form':form,})
 
