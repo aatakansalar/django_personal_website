@@ -11,7 +11,6 @@
             <p>
                 {{post.post_content|safe}}
             </p>
-            <hr>
             {% if post.post_tags.all  %}
                 <i class="fas fa-tags mr-2 text-dark"></i>
                 {% for tag in post.post_tags.all %}
