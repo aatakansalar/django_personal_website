@@ -33,7 +33,20 @@
     opacity: 1;
 }
 .post-img:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     transition: background-color .4s;
 }
 
+.project-wrapper {
+    border: .5px solid #999;
+    padding: 3rem;
+}
+.project-img {
+    width: 40%;
+    height: auto;
+}
+
+.project-description {
+    padding: 1rem;
+    
+}
