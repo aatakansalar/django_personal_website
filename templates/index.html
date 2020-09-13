@@ -30,7 +30,7 @@
         <div class="posts">
             <h3 class="mt-2 ">Son Yazılarım...</h3><hr>
             {% for post in posts %}
-                <a href="{% url 'post:post' post.id %}" class="text-dark h5">{{post.post_title}}</a>   <small>//{{post.post_date}}</small><br>
+                <a href="{{ post.get_absolute_url }}" class="text-dark h5">{{post.post_title}}</a>   <small>//{{post.post_date}}</small><br>
             {% endfor %}
             {% endif %}
         </div>  
