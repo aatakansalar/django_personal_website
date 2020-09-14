@@ -1,28 +1,39 @@
-<nav class="navbar fixed-top navbar-expand-md navbar-inverse border-bottom justify p-0" >
-    <a href="{% url 'index' %}" class="navbar-brand hoverable p-3">AHMET ATAKAN SALAR</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars mr-4"></i></span>
-    </button>
-    <div class="collapse navbar-collapse closed p-0" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-
-            <li class="nav-item hoverable">
-                <a class="nav-link" href="{% url 'post:posts'  %}">YAZILARIM</a>
-            </li>
-            <li class="nav-item hoverable">
-                <a class="nav-link" href="{% url 'projects'  %}">PROJELERİM</a>
-            </li>
-            {% if request.user.is_authenticated %}
-                <li class="nav-item hoverable">
-                    <a class="nav-link" href="{% url 'post:dashboard'  %}">DASHBOARD</a>
-                </li>
-                <li class="nav-item hoverable">
-                    <a class="nav-link" href="{% url 'post:makepost'  %}">YAZI EKLE</a>
-                </li>
-                <li class="nav-item hoverable">
-                    <a class="nav-link" href="{% url 'user:logout'  %}">ÇIKIŞ</a>
-                </li>
-            {% endif %}
-        </ul>
-    </div>
+<nav
+  class="navbar fixed-top navbar-expand-md navbar-inverse border-bottom justify p-0"
+>
+  <a href="{% url 'index' %}" class="navbar-brand hoverable p-3"
+    >AHMET ATAKAN SALAR</a
+  >
+  <button
+    class="navbar-toggler navbar-toggler-right"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarCollapse"
+    aria-controls="navbarCollapse"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span><i class="fas fa-bars mr-4"></i></span>
+  </button>
+  <div class="collapse navbar-collapse closed p-0" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item hoverable">
+        <a class="nav-link" href="{% url 'post:posts'  %}">YAZILARIM</a>
+      </li>
+      <li class="nav-item hoverable">
+        <a class="nav-link" href="{% url 'projects'  %}">PROJELERİM</a>
+      </li>
+      {% if request.user.is_authenticated %}
+      <li class="nav-item hoverable">
+        <a class="nav-link" href="{% url 'post:dashboard'  %}">DASHBOARD</a>
+      </li>
+      <li class="nav-item hoverable">
+        <a class="nav-link" href="{% url 'post:makepost'  %}">YAZI EKLE</a>
+      </li>
+      <li class="nav-item hoverable">
+        <a class="nav-link" href="{% url 'user:logout'  %}">ÇIKIŞ</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
 </nav>

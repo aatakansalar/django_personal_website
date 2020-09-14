@@ -1,49 +1,83 @@
-{% extends "layout.html" %}
-{% load static %}
-{% block body %}
-
-<div class="text-center" style="margin-top: 3.9rem;">
-    <div class="header-wrapper">
-        <h1><a href="/" class="text-decoration-none text-dark font-weight-bolder">Ahmet Atakan Salar</a></h1>
-        <h4 class="text-secondary pt-2">//  Aspiring Developer</h4>
-        <br>
-        <a href="https://github.com/aatakansalar" target="_blank" class="text-dark mr-3"><i class="fab fa-github fa-2x"></i></a>
-        <a href="https://twitter.com/AtakanSalar" target="_blank" class="text-dark mr-3"><i class="fab fa-twitter fa-2x"></i></a>
-        <a href="https://www.linkedin.com/in/ahmet-atakan-salar-7136881b1/" target="_blank" class="text-dark mr-3"><i class="fab fa-linkedin-in fa-2x"></i></a>
-    </div>
+{% extends "layout.html" %} {% load static %} {% block body %}
+<div class="text-center" style="margin-top: 3.9rem">
+  <div class="header-wrapper">
+    <h1>
+      <a href="/" class="text-decoration-none text-dark font-weight-bolder"
+        >Ahmet Atakan Salar</a
+      >
+    </h1>
+    <h4 class="text-secondary pt-2">// Aspiring Developer</h4>
+    <br />
+    <a
+      href="https://github.com/aatakansalar"
+      target="_blank"
+      class="text-dark mr-3"
+      ><i class="fab fa-github fa-2x"></i
+    ></a>
+    <a
+      href="https://twitter.com/AtakanSalar"
+      target="_blank"
+      class="text-dark mr-3"
+      ><i class="fab fa-twitter fa-2x"></i
+    ></a>
+    <a
+      href="https://www.linkedin.com/in/ahmet-atakan-salar-7136881b1/"
+      target="_blank"
+      class="text-dark mr-3"
+      ><i class="fab fa-linkedin-in fa-2x"></i
+    ></a>
+  </div>
 </div>
-
 <div class="row mb-5 pb-5">
-    <div class="col-md-4 offset-md-3 align-self-center">
-        <h2 class="font-weight-bold ">Hakkımda</h2>
-        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a viverra orci. Fusce commodo augue id neque varius vulputate. In ac risus sagittis, euismod est at, laoreet tortor....</p>
-        <h4>Eğitim</h4>
-        <ul>
-            <li>İstanbul Bilgi Üniversitesi Bilgisayar Mühendisliği (Tam Burslu)  (2018 - )</li>
-            <li>Şehit Mustafa Serin Fen Lisesi (2014 - 2018)</li>
-        </ul>
-        <h4>Çalışma Alanları</h4>
-        <ul>
-            <li>Abc</li>
-        </ul>
-    </div>
-    <div class="col-md-3">
+  <div class="col-md-4 offset-md-3 align-self-center">
+    <h3>Hakkımda</h3>
+    <hr />
+    <p>
+      Ben Ahmet Atakan Salar, İstanbul Bilgi Üniversitesi Bilgisayar
+      Mühendisliği 2. sınıf öğrencisiyim. Front-end ve back-end web
+      geliştirmenin yanı sıra veri analizi, doğal dil işleme, makine öğrenmesi
+      gibi konulara da ilgisi olan bir yazılımcı adayıyım. Bunların yanında
+      resim, tarih ve world building gibi hobilerle uğraşıyorum.
+    </p>
+    <br />
+    <h3>Eğitim</h3>
+    <hr />
+    <ul>
+      <li>
+        İstanbul Bilgi Üniversitesi Bilgisayar Mühendisliği (Tam Burslu) (2018 -
+        )
+      </li>
+      <li>Şehit Mustafa Serin Fen Lisesi (2014 - 2018)</li>
+    </ul>
+  </div>
+  <div class="col-md-3">
     {% if posts %}
-        <div class="posts">
-            <h3 class="mt-2 ">Son Yazılarım...</h3><hr>
-            {% for post in posts %}
-                <a href="{{ post.get_absolute_url }}" class="text-dark h5">{{post.post_title}}</a>   <small>//{{post.post_date}}</small><br>
-            {% endfor %}
-            {% endif %}
-        </div>  
-        <div class= "mt-3">
-            <h4>İletişim</h4>
-            <hr>
-                <li style="list-style: none;"><i class="fas fa-envelope fa-lg mr-2"></i> a.atakansalar@gmail.com</li>
-                <li style="list-style: none;"><i class="fab fa-twitter fa-lg mr-2"></i>@AtakanSalar</li>
-                <li style="list-style: none;"><i class="fab fa-github fa-lg mr-2"></i>@aatakansalar</li>
-                <li style="list-style: none;"><i class="far fa-file fa-lg mr-2"></i>CV</li>
-        </div>
+    <div class="posts">
+      <h3>Son Yazılarım...</h3>
+      <hr />
+      {% for post in posts %}
+      <a href="{{ post.get_absolute_url }}" class="text-dark h5"
+        >{{post.post_title}}</a
+      >
+      <small>//{{post.post_date}}</small><br />
+      {% endfor %}
+      <br />
+      {% endif %}
     </div>
+    <div>
+      <h4>İletişim</h4>
+      <hr />
+      <li style="list-style: none">
+        <i class="fas fa-envelope fa-lg mr-2"></i> a.atakansalar@gmail.com
+      </li>
+      <li style="list-style: none">
+        <i class="fab fa-twitter fa-lg mr-2"></i>@AtakanSalar
+      </li>
+      <li style="list-style: none">
+        <i class="fab fa-github fa-lg mr-2"></i>@aatakansalar
+      </li>
+      <li style="list-style: none"><i class="far fa-file fa-lg mr-2"></i>CV</li>
+    </div>
+  </div>
 </div>
 {% endblock body %}

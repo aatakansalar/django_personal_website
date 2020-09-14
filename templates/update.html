@@ -1,20 +1,14 @@
-{% extends "layout.html" %}
-{% load crispy_forms_tags %}
-
-{% block body %}
+{% extends "layout.html" %} {% load crispy_forms_tags %} {% block body %}
 <div class="row w-100">
-    <div class="col-md-6 offset-md-3 align-self-center content-wrapper">
-        <h3>Post</h3>
-        <hr>
-        <form method = "post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <br>
-            {{ form.media }}
-            {{form|crispy}}
-            {{content | safe}}
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form> 
-    </div>
+  <div class="col-md-6 offset-md-3 align-self-center content-wrapper">
+    <h3>Post</h3>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <br />
+      {{ form.media }} {{form|crispy}} {{content | safe}}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </div>
 {% endblock body %}

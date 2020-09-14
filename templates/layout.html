@@ -1,40 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-    
-    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'favicon.ico' %}"
+    />
+
+    <link rel="stylesheet" href="{% static 'style/style.css' %}" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
     <title>Atakan Salar</title>
   </head>
 
   <body class="container-fluid">
-
-    {% include "includes/navbar.html" %}
-
-
-    {% block body %}     
-
-    {% endblock body %}
-
+    {% include "includes/navbar.html" %} {% block body %} {% endblock body %}
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>  
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
   </body>
 
   <footer>
-    <p class="text-center text-secondary pt-2 m-0"> blr - atakansalar - 2020</p>
-      
+    <p class="text-center text-secondary pt-2 m-0">blr - atakansalar - 2020</p>
   </footer>
 </html>

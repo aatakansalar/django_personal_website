@@ -1,28 +1,31 @@
-{% extends "layout.html" %}
-{% block body %}
-{% if post %}
+{% extends "layout.html" %} {% block body %} {% if post %}
 <div class="row m-3">
-    <div class="col-md-8 offset-md-2 content-wrapper">
-        <div class="post-wrapper">
-            {% if post.post_image %}
-            <img class="img-fluid" style="border-radius:8px 8px 0 0;" src="{{post.post_image.url}}" alt="">
-            {% endif %}
-            <h2 class="mt-2">{{post.post_title}}</h2><hr>
-            <p>
-                {{post.post_content|safe}}
-            </p>
-            {% if post.post_tags.all  %}
-                <i class="fas fa-tags mr-2 text-dark"></i>
-                {% for tag in post.post_tags.all %}
-                    <a href="{{ tag.get_absolute_url }}" class="mr-2 text-decoration-none badge badge-secondary badge-pill">
-                        {{tag.tag_name}}
-                    </a>
-                {% endfor %}
-            {% endif %}
-            <i class="float-right text-secondary">{{post.post_date}}</i>
-            <h6 class="text-secondary text-right"></h6>
-        </div>
+  <div class="col-md-8 offset-md-2 content-wrapper">
+    <div class="post-wrapper">
+      {% if post.post_image %}
+      <img
+        class="img-fluid"
+        style="border-radius: 8px 8px 0 0"
+        src="{{post.post_image.url}}"
+        alt=""
+      />
+      {% endif %}
+      <h2 class="mt-2">{{post.post_title}}</h2>
+      <hr />
+      <p>{{post.post_content|safe}}</p>
+      {% if post.post_tags.all %}
+      <i class="fas fa-tags mr-2 text-dark"></i>
+      {% for tag in post.post_tags.all %}
+      <a
+        href="{{ tag.get_absolute_url }}"
+        class="mr-2 text-decoration-none badge badge-secondary badge-pill"
+      >
+        {{tag.tag_name}}
+      </a>
+      {% endfor %} {% endif %}
+      <i class="float-right text-secondary">{{post.post_date}}</i>
+      <h6 class="text-secondary text-right"></h6>
     </div>
+  </div>
 </div>
-{% endif %}
-{% endblock body %}
+{% endif %} {% endblock body %}

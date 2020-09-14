@@ -1,69 +1,90 @@
-{% extends "layout.html" %}
-{% block body %}
-{% if posts %}
-    <div class="row content-wrapper ">
-        <div class="col-md-6 offset-md-3 ">
-            <div class="text-center">
-                <h2 class="d-inline-flex mr-2">Yazılarım</h2>
-                {% if tags %}
-                <a href="#tags-collapse" data-toggle="collapse" title="etiketler" aria-expanded="true" class="show">
-                    <i class="fas fa-tags text-info fa-lg pt-4"></i>
-                </a>
-                <div class="collapse ml-3 show" id="tags-collapse">
-                {% for tag in tags %}
-                    <a href="{{tag.get_absolute_url}}" class="badge badge-info badge-pill">{{tag.tag_name}}</a>
-                {% endfor %}
-                </div>
-                {% endif %}
-                <hr>
-                {% if tag %}
-                    <p class="">
-                        <i class="fas fa-tags mr-2 text-dark"></i>Filtre Etiketi:
-                        <a href="{% url 'post:posts' %}" class="badge badge-info badge-pill">{{tag.tag_name}} x</a>
-                    </p>
-                {% endif %}
-            </div>
-            {% for post in posts %}
-            <div class="card mb-5">
-                {% if post.post_image %}
-                <a href="{{ post.get_absolute_url }}" class="post-img"><img class="card-img-top" src="{{post.post_image.url}}" alt="Card image cap"></a>
-                {% endif %}
-                
-                <div class="card-body">
-                    <a href="{{ post.get_absolute_url }}" class="text-dark"><h4>{{post.post_title}}</h4></a>
-                    <small class="text-secondary">{{post.post_date}}</small>
-                    <p class="card-text ">{{post.post_content|truncatewords:50|safe}}</p>
-               </div>
-               <div class="card-footer">
-                {% if post.post_tags.all  %}
-                <i class="fas fa-tags mr-2 text-info" title="Etiketler"></i>
-                {% for tag in post.post_tags.all %}
-                    <a href="{{ tag.get_absolute_url }}" class="mr-2 text-decoration-none badge badge-info badge-pill">{{tag.tag_name}}</a>
-                {% endfor %}
-                {% endif %}
-                <a href="{{ post.get_absolute_url }}" class="w-100">
-                    <span class="badge badge-success float-right">Daha fazla ...</span>
-                </a>
-               </div>
-            </div>
-            {% endfor %}
-        </div>
+{% extends "layout.html" %} {% block body %} {% if posts %}
+<div class="row content-wrapper">
+  <div class="col-md-6 offset-md-3">
+    <div class="text-center">
+      <h2 class="d-inline-flex mr-2">Yazılarım</h2>
+      {% if tags %}
+      <a
+        href="#tags-collapse"
+        data-toggle="collapse"
+        title="etiketler"
+        aria-expanded="true"
+        class="show"
+      >
+        <i class="fas fa-tags text-info fa-lg pt-4"></i>
+      </a>
+      <div class="collapse ml-3 show" id="tags-collapse">
+        {% for tag in tags %}
+        <a href="{{tag.get_absolute_url}}" class="badge badge-info badge-pill"
+          >{{tag.tag_name}}</a
+        >
+        {% endfor %}
+      </div>
+      {% endif %}
+      <hr />
+      {% if tag %}
+      <p class="">
+        <i class="fas fa-tags mr-2 text-dark"></i>Filtre Etiketi:
+        <a href="{% url 'post:posts' %}" class="badge badge-info badge-pill"
+          >{{tag.tag_name}} x</a
+        >
+      </p>
+      {% endif %}
     </div>
+    {% for post in posts %}
+    <div class="card mb-5">
+      {% if post.post_image %}
+      <a href="{{ post.get_absolute_url }}" class="post-img"
+        ><img
+          class="card-img-top"
+          src="{{post.post_image.url}}"
+          alt="Card image cap"
+      /></a>
+      {% endif %}
+
+      <div class="card-body">
+        <a href="{{ post.get_absolute_url }}" class="text-dark"
+          ><h4>{{post.post_title}}</h4></a
+        >
+        <small class="text-secondary">{{post.post_date}}</small>
+        <p class="card-text">{{post.post_content|truncatewords:50|safe}}</p>
+      </div>
+      <div class="card-footer">
+        {% if post.post_tags.all %}
+        <i class="fas fa-tags mr-2 text-seconddary" title="Etiketler"></i>
+        {% for tag in post.post_tags.all %}
+        <a
+          href="{{ tag.get_absolute_url }}"
+          class="mr-2 text-decoration-none badge badge-info badge-pill"
+          >{{tag.tag_name}}</a
+        >
+        {% endfor %} {% endif %}
+        <a href="{{ post.get_absolute_url }}" class="w-100">
+          <span class="badge badge-success float-right">Daha fazla ...</span>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% else %}
-    <div class="row content-wrapper p-3" style="height:400px;">
-        <div class="col-md-6 offset-md-3">
-            <div class="text-center">
-                <h2 class="d-inline-flex mr-2">Yazılarım</h2>
-                {% if tag %}
-                    <p class="">
-                        <i class="fas fa-tags mr-2 text-dark"></i>Filtre Etiketi:
-                        <a href="{% url 'post:posts' %}" class="badge badge-info badge-pill">{{tag.tag_name}} x</a>
-                    </p>
-                {% endif %}
-                <hr>
-                <div class="alert-primary p-3 mt-4" style="border-radius:8px;">Bu etiketle yazı bulunamadı...</div>
-            </div>
-        </div>
+<div class="row content-wrapper p-3" style="height: 400px">
+  <div class="col-md-6 offset-md-3">
+    <div class="text-center">
+      <h2 class="d-inline-flex mr-2">Yazılarım</h2>
+      {% if tag %}
+      <p class="">
+        <i class="fas fa-tags mr-2 text-dark"></i>Filtre Etiketi:
+        <a href="{% url 'post:posts' %}" class="badge badge-info badge-pill"
+          >{{tag.tag_name}} x</a
+        >
+      </p>
+      {% endif %}
+      <hr />
+      <div class="alert-primary p-3 mt-4" style="border-radius: 8px">
+        Bu etiketle yazı bulunamadı...
+      </div>
     </div>
-{% endif %}
-{% endblock body %}
+  </div>
+</div>
+{% endif %} {% endblock body %}

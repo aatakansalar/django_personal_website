@@ -8,7 +8,7 @@ from user import urls
 # Create your views here.
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all()[:5]
     context = {
         "posts": posts,
     }

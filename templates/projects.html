@@ -1,22 +1,31 @@
-{% extends "layout.html" %}
-{% load static %}
-
-{% block body %}
-<div style="margin: 8rem 3rem 3rem 3rem;">
-        {% for project in projects %}
-        <div class="row text-center m-md-5">
-            <img class="img-responsive float-left project-img col-md-5"  src="/media/{{project.image}}" alt="{{project.title}}-image">
-            <div class="project-description col-md-7">
-                <a href="{{project.project_link|safe}}" target="_blank" title="Source Code" class="text-dark"><h3>{{project.title}}</h3></a>
-                {{project.description|safe}}  
-                <div class="text-center w-100 mt-4">
-                    {% for tool in project.tools.all %}
-                    <h4 class="d-inline-flex"><span class="badge badge-success tool-tag">{{tool.tag_name}}</span></h4>
-                    {% endfor %}
-                </div>     
-            </div>
-        </div>
-        <hr>
+{% extends "layout.html" %} {% load static %} {% block body %}
+<div style="margin: 8rem 3rem 3rem 3rem">
+  {% for project in projects %}
+  <div class="row text-center m-md-5">
+    <img
+      class="img-responsive float-left project-img col-md-5"
+      src="/media/{{project.image}}"
+      alt="{{project.title}}-image"
+    />
+    <div class="p-1 col-md-7">
+      <a
+        href="{{project.project_link|safe}}"
+        target="_blank"
+        title="Source Code"
+        class="text-dark"
+        ><h3>{{project.title}}</h3></a
+      >
+      {{project.description|safe}}
+      <div class="text-center w-100 mt-4">
+        {% for tool in project.tools.all %}
+        <h4 class="d-inline-flex">
+          <span class="badge badge-success tool-tag">{{tool.tag_name}}</span>
+        </h4>
         {% endfor %}
+      </div>
+    </div>
+  </div>
+  <hr />
+  {% endfor %}
 </div>
 {% endblock body %}
