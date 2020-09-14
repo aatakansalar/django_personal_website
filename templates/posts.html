@@ -17,7 +17,7 @@
                 {% endif %}
                 <hr>
                 {% if tag %}
-                    <p>
+                    <p class="">
                         <i class="fas fa-tags mr-2 text-dark"></i>Filtre Etiketi:
                         <a href="{% url 'post:posts' %}" class="badge badge-info badge-pill">{{tag.tag_name}} x</a>
                     </p>
@@ -36,7 +36,7 @@
                </div>
                <div class="card-footer">
                 {% if post.post_tags.all  %}
-                <i class="fas fa-tags mr-2 text-secondary" title="Etiketler"></i>
+                <i class="fas fa-tags mr-2 text-info" title="Etiketler"></i>
                 {% for tag in post.post_tags.all %}
                     <a href="{{ tag.get_absolute_url }}" class="mr-2 text-decoration-none badge badge-info badge-pill">{{tag.tag_name}}</a>
                 {% endfor %}

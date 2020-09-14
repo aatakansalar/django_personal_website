@@ -12,3 +12,10 @@ class PostAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Post
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['tag_name','slug']
+    list_display_links = ['tag_name','slug']
+    class Meta: 
+        model = Tag
