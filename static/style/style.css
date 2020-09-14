@@ -43,6 +43,11 @@ nav {
 
 .project-img {
   object-fit: cover;
+  position: relative;
+  z-index: 10;
+  -webkit-box-shadow: 8px 7px 19px 0px rgba(0,0,0,0.81);
+  -moz-box-shadow: 8px 7px 19px 0px rgba(0,0,0,0.81);
+  box-shadow: 8px 7px 19px 0px rgba(0,0,0,0.81);
 }
 
 .tool-tag {

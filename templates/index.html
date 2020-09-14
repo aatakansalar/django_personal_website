@@ -2,30 +2,16 @@
 <div class="text-center" style="margin-top: 3.9rem">
   <div class="header-wrapper">
     <h1>
-      <a href="/" class="text-decoration-none text-dark font-weight-bolder"
-        >Ahmet Atakan Salar</a
-      >
+      <a href="/" class="text-decoration-none text-dark font-weight-bolder">Ahmet Atakan Salar</a>
     </h1>
     <h4 class="text-secondary pt-2">// Aspiring Developer</h4>
     <br />
-    <a
-      href="https://github.com/aatakansalar"
-      target="_blank"
-      class="text-dark mr-3"
-      ><i class="fab fa-github fa-2x"></i
-    ></a>
-    <a
-      href="https://twitter.com/AtakanSalar"
-      target="_blank"
-      class="text-dark mr-3"
-      ><i class="fab fa-twitter fa-2x"></i
-    ></a>
-    <a
-      href="https://www.linkedin.com/in/ahmet-atakan-salar-7136881b1/"
-      target="_blank"
-      class="text-dark mr-3"
-      ><i class="fab fa-linkedin-in fa-2x"></i
-    ></a>
+    <a href="https://github.com/aatakansalar" target="_blank" title="github" class="text-dark mr-3"><i
+        class="fab fa-github fa-2x"></i></a>
+    <a href="https://twitter.com/AtakanSalar" target="_blank" title="twitter" class="text-dark mr-3"><i
+        class="fab fa-twitter fa-2x"></i></a>
+    <a href="https://www.linkedin.com/in/ahmet-atakan-salar-7136881b1/" target="_blank" title="linkedin"
+      class="text-dark mr-3"><i class="fab fa-linkedin-in fa-2x"></i></a>
   </div>
 </div>
 <div class="row mb-5 pb-5">
@@ -56,27 +42,24 @@
       <h3>Son Yazılarım...</h3>
       <hr />
       {% for post in posts %}
-      <a href="{{ post.get_absolute_url }}" class="text-dark h5"
-        >{{post.post_title}}</a
-      >
+      <a href="{{ post.get_absolute_url }}" class="text-dark h5">{{post.post_title}}</a>
       <small>//{{post.post_date}}</small><br />
       {% endfor %}
-      <br />
       {% endif %}
     </div>
     <div>
+      <br>
       <h4>İletişim</h4>
       <hr />
       <li style="list-style: none">
-        <i class="fas fa-envelope fa-lg mr-2"></i> a.atakansalar@gmail.com
+        <i class="fas fa-envelope fa-lg mr-2" title="e-mail"></i>
+        <p class="tool-tag d-inline-flex"> a.atakansalar@gmail.com</p>
       </li>
       <li style="list-style: none">
-        <i class="fab fa-twitter fa-lg mr-2"></i>@AtakanSalar
+        <i class="fab fa-twitter fa-lg mr-2" title="twitter"></i>
+        <p class="tool-tag d-inline-flex"> @AtakanSalar</p>
       </li>
-      <li style="list-style: none">
-        <i class="fab fa-github fa-lg mr-2"></i>@aatakansalar
-      </li>
-      <li style="list-style: none"><i class="far fa-file fa-lg mr-2"></i>CV</li>
+
     </div>
   </div>
 </div>

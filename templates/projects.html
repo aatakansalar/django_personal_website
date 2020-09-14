@@ -1,30 +1,32 @@
 {% extends "layout.html" %} {% load static %} {% block body %}
-<div style="margin: 8rem 3rem 3rem 3rem">
+<div style="margin: 8rem 3rem 14rem 3rem">
   {% for project in projects %}
-  <div class="row text-center m-md-5">
+  <div class="row text-center offset-md-2">
     <img
-      class="img-responsive float-left project-img col-md-5"
+      class="img-fluid project-img col-md-5"
       src="/media/{{project.image}}"
       alt="{{project.title}}-image"
     />
-    <div class="p-1 col-md-7">
-      <a
-        href="{{project.project_link|safe}}"
-        target="_blank"
-        title="Source Code"
-        class="text-dark"
-        ><h3>{{project.title}}</h3></a
-      >
-      {{project.description|safe}}
-      <div class="text-center w-100 mt-4">
-        {% for tool in project.tools.all %}
-        <h4 class="d-inline-flex">
-          <span class="badge badge-success tool-tag">{{tool.tag_name}}</span>
-        </h4>
-        {% endfor %}
-      </div>
+    <div class="p-1 col-md-5 m-5 pt-4">
+      <h3 class=" d-inline-flex mr-1">{{project.title}}</h3>
+        <a
+          href="{{project.project_link|safe}}"
+          target="_blank"
+          title="Source Code"
+          class="text-dark"
+          ><i class="fas fa-link fa-lg"></i></a
+          >
+        {{project.description|safe}}
+        <div class="text-center w-100 mt-4">
+          {% for tool in project.tools.all %}
+          <h4 class="d-inline-flex">
+            <span class="badge badge-success tool-tag">{{tool.tag_name}}</span>
+          </h4>
+          {% endfor %}
+        </div>
     </div>
   </div>
+  <br>
   <hr />
   {% endfor %}
 </div>
