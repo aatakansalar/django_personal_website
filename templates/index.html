@@ -38,27 +38,24 @@
   <div class="col-md-3">
     {% if posts %}
     <div class="posts">
-      <h3>Son Yazılarım...</h3>
+      <h3>Son Yazılarım</h3>
       <hr />
       {% for post in posts %}
-      <a href="{{ post.get_absolute_url }}" class="text-dark h5">{{post.post_title}}</a>
-      <small>//{{post.post_date}}</small><br />
+      <a href="{{ post.get_absolute_url }}" title="{{post.post_date}}"
+        class="text-dark font-weight-bold">{{post.post_title}}</a>
+      <br />
       {% endfor %}
+      </ul>
       {% endif %}
     </div>
-    <div>
+    <div class="mt-3">
       <br>
-      <h4>İletişim</h4>
+      <h3>İletişim</h3>
       <hr />
       <li style="list-style: none">
         <i class="fas fa-envelope fa-lg mr-2" title="e-mail"></i>
         <p class="tool-tag d-inline-flex"> a.atakansalar@gmail.com</p>
       </li>
-      <li style="list-style: none">
-        <i class="fab fa-twitter fa-lg mr-2" title="twitter"></i>
-        <p class="tool-tag d-inline-flex"> @AtakanSalar</p>
-      </li>
-
     </div>
   </div>
 </div>
