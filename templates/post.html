@@ -13,6 +13,7 @@
       <h2 class="mt-2">{{post.post_title}}</h2>
       <hr />
       <p>{{post.post_content|safe}}</p>
+      <br />
       {% if post.post_tags.all %}
       <i class="fas fa-tags mr-2 text-dark"></i>
       {% for tag in post.post_tags.all %}

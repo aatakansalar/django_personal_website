@@ -2,7 +2,7 @@
 <div class="row content-wrapper">
   <div class="col-md-6 offset-md-3">
     <div class="text-center">
-      <h2 class="d-inline-flex mr-2">Yazılarım</h2>
+      <h2 class="d-inline-flex mr-2 mt-5 pb-2 font-weight-bold">Yazılarım</h2>
       {% if tags %}
       <a
         href="#tags-collapse"
@@ -11,7 +11,7 @@
         aria-expanded="true"
         class="show"
       >
-        <i class="fas fa-tags text-info fa-lg pt-4"></i>
+        <i class="fas fa-tags text-dark fa-lg pt-4"></i>
       </a>
       <div class="collapse ml-3 show" id="tags-collapse">
         {% for tag in tags %}
@@ -21,7 +21,7 @@
         {% endfor %}
       </div>
       {% endif %}
-      <hr />
+      <hr class="mb-5" />
       {% if tag %}
       <p class="">
         <i class="fas fa-tags mr-2 text-dark"></i>Filtre Etiketi:

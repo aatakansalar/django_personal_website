@@ -57,6 +57,5 @@ nav {
   user-select: all; /* Likely future */
 }
 footer {
-  background: linear-gradient(to right, #f4f3f3, #f4f9f4, #f4f3f3);
   height: 3rem;
 }
